@@ -4,10 +4,41 @@ import java.awt.*;
 import java.io.*;
 import java.util.*;
 
+
 public class AdventureTime {
     static void main(String[] args) {
-        for(StepClass steps : loadAdventure()) {
-            System.out.println(Colors.TRON.printWithColor(String.valueOf(steps)));
+        homeScreen();
+
+    }
+
+    public static void homeScreen() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Welcome to Adventure Time.");
+        String message = ("""
+                -----------------------------------
+                Press (P) to play
+                Press (Q) to quit
+                Your choice:\s""");
+        System.out.print(message);
+        String choice = scanner.nextLine();
+        while(true) {
+            if(choice.equalsIgnoreCase("Q")) {
+                break;
+            }
+            gameScreen(2);
+            System.out.print(message);
+            choice = scanner.nextLine();
+
+        }
+    }
+
+    public static void gameScreen(int id) {
+        for(StepClass step : loadAdventure()) {
+            if(step.getId() == id) {
+                System.out.println("Story text: " + Colors.TRON.printWithColor(step.getStoryText()) + "\n");
+                System.out.println("1) " + Colors.CRIMSON.printWithColor(step.getOption1Text()) + "\n");
+                System.out.println("2) " + Colors.AMBER.printWithColor(step.getOption2Text()) + "\n");
+            }
         }
     }
 
