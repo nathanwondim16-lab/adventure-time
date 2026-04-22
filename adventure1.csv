@@ -1,25 +1,25 @@
 id|storyText|option1Text|option1NextId|option2Text|option2NextId,,,,
-1|You wake up at the edge of a dark forest. A narrow trail leads into the trees,and a dirt road heads toward a distant village.|Enter the forest|2|Walk to the village|3,,,
-2|The forest is quiet except for birds and rustling leaves. After a few minutes,you find a fork in the trail.|Take the left path|4|Take the right path|5,,,
-3|You arrive at the village gate. The market is busy,and a guard waves you over.|Talk to the guard|6|Go into the market|7,,,
-4|The left path leads to an old wooden bridge crossing a river. The bridge looks unstable.|Cross the bridge|8|Turn back|2,,,,
-5|The right path leads to a cave entrance. You hear a faint growling sound from inside.|Enter the cave|9|Run back|2,,,,
-6|The guard tells you the village has lost a valuable map. He asks whether you are willing to help search for it.|Accept the quest|10|Refuse and leave the village|11,,,,
-7|In the market,a merchant offers you a lantern for 5 gold,but you have no money. He says he will trade it for a favor.|Do the merchant a favor|12|Leave the market|3,,
-8|Halfway across the bridge,the wood cracks beneath your feet. You leap forward just in time and reach the other side safely.|Continue toward the tower ahead|13|Rest by the riverbank|14,,,
-9|Inside the cave,you discover a sleeping wolf beside a small chest.|Try to open the chest quietly|15|Leave the cave silently|2,,,
-10|The guard smiles and sends you toward the village library,where the map was last seen.|Search the library|16|Question the villagers|17,,,
-11|You leave the village and follow the road into the hills. By nightfall,you are lost and out of supplies.|Start over|1|Quit|END,,,
-12|You help the merchant organize his cart,and he rewards you with the lantern.|Take the lantern and explore the forest|18|Sell the lantern for food|19,,,
-13|The tower door is locked,but a broken window gives you a way inside.|Climb through the window|20|Walk away from the tower|14,,,
-14|You rest for too long and fall asleep. When you wake, it is night,and you decide to head home.|Start over|1|Quit|END,,
-15|The chest creaks open, and the wolf wakes up. It chases you out of the cave,but you escape with a silver key.|Take the key to the tower|13|Throw away the key and return to the trail|2,,
-16|In the library,you find dusty books and a note that says: The map is hidden where light reaches but never stays.|Search the town square|21|Search the guard tower|22,,,
-17|A villager tells you the old fountain has a hidden compartment used years ago for valuables.|Check the fountain|21|Ignore the advice and leave town|11,,,,
-18|With the lantern lighting your way,you return to the forest and notice a hidden trail behind thick bushes.|Follow the hidden trail|23|Stay on the main trail|2,,,
-19|You sell the lantern, buy food,and decide to settle in the village instead of adventuring.|Start over|1|Quit|END,,
-20|Inside the tower,you find a locked box on a stone table.|Use the silver key|24|Leave the box alone|14,,,
-21|At the town square fountain,you find a hidden compartment containing the missing map. The villagers celebrate your success.|Play again|1|Quit|END,,,
+1|You wake up at the edge of a dark forest. A narrow trail leads into the trees,and a dirt road heads toward a distant village.|Enter the forest|2|Walk to the village|3
+2|The forest is quiet except for birds and rustling leaves. After a few minutes,you find a fork in the trail.|Take the left path|4|Take the right path|5
+3|You arrive at the village gate. The market is busy,and a guard waves you over.|Talk to the guard|6|Go into the market|7
+4|The left path leads to an old wooden bridge crossing a river. The bridge looks unstable.|Cross the bridge|8|Turn back|2
+5|The right path leads to a cave entrance. You hear a faint growling sound from inside.|Enter the cave|9|Run back|2
+6|The guard tells you the village has lost a valuable map. He asks whether you are willing to help search for it.|Accept the quest|10|Refuse and leave the village|11
+7|In the market,a merchant offers you a lantern for 5 gold,but you have no money. He says he will trade it for a favor.|Do the merchant a favor|12|Leave the market|3
+8|Halfway across the bridge,the wood cracks beneath your feet. You leap forward just in time and reach the other side safely.|Continue toward the tower ahead|13|Rest by the riverbank|14
+9|Inside the cave,you discover a sleeping wolf beside a small chest.|Try to open the chest quietly|15|Leave the cave silently|2
+10|The guard smiles and sends you toward the village library,where the map was last seen.|Search the library|16|Question the villagers|17
+11|You leave the village and follow the road into the hills. By nightfall,you are lost and out of supplies.|Start over|1|Quit|END
+12|You help the merchant organize his cart,and he rewards you with the lantern.|Take the lantern and explore the forest|18|Sell the lantern for food|19
+13|The tower door is locked,but a broken window gives you a way inside.|Climb through the window|20|Walk away from the tower|14
+14|You rest for too long and fall asleep. When you wake, it is night,and you decide to head home.|Start over|1|Quit|END
+15|The chest creaks open, and the wolf wakes up. It chases you out of the cave,but you escape with a silver key.|Take the key to the tower|13|Throw away the key and return to the trail|2
+16|In the library,you find dusty books and a note that says: The map is hidden where light reaches but never stays.|Search the town square|21|Search the guard tower|22
+17|A villager tells you the old fountain has a hidden compartment used years ago for valuables.|Check the fountain|21|Ignore the advice and leave town|11
+18|With the lantern lighting your way,you return to the forest and notice a hidden trail behind thick bushes.|Follow the hidden trail|23|Stay on the main trail|2
+19|You sell the lantern, buy food,and decide to settle in the village instead of adventuring.|Start over|1|Quit|END
+20|Inside the tower,you find a locked box on a stone table.|Use the silver key|24|Leave the box alone|14
+21|At the town square fountain,you find a hidden compartment containing the missing map. The villagers celebrate your success.|Play again|1|Quit|END
 22|The guard tower contains old spears, crates, and cobwebs, but no map. As you leave,you realize the clue pointed elsewhere.|Search the town square instead|21|Give up|END
-23|The hidden trail leads to a peaceful clearing with a stone pedestal. On it sits a compass that points toward treasure.|Take the compass to the tower|13|Leave the compass and go back|2,,,,
-24|The silver key opens the box. Inside is a bag of gold and a second copy of the missing village map. You return as a hero.|Play again|1|Quit|END,,,,
+23|The hidden trail leads to a peaceful clearing with a stone pedestal. On it sits a compass that points toward treasure.|Take the compass to the tower|13|Leave the compass and go back|2
+24|The silver key opens the box. Inside is a bag of gold and a second copy of the missing village map. You return as a hero.|Play again|1|Quit|END
