@@ -3,16 +3,18 @@ package com.pluralsight;
 import java.awt.*;
 import java.io.*;
 import java.util.*;
+import java.util.Random;
 
 
 public class AdventureTime {
+    static final Scanner scanner = new Scanner(System.in);
     static void main(String[] args) {
         homeScreen();
 
     }
 
     public static void homeScreen() {
-        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
         System.out.println("Welcome to Adventure Time.");
         String message = ("""
                 -----------------------------------
@@ -20,26 +22,48 @@ public class AdventureTime {
                 Press (Q) to quit
                 Your choice:\s""");
         System.out.print(message);
-        String choice = scanner.nextLine();
+        String choice = scanner.nextLine().strip();
         while(true) {
             if(choice.equalsIgnoreCase("Q")) {
                 break;
+            } else if(choice.equalsIgnoreCase("P")) {
+                gameScreen(random.nextInt(24) + 1);
             }
-            gameScreen(2);
-            System.out.print(message);
-            choice = scanner.nextLine();
-
         }
     }
 
     public static void gameScreen(int id) {
-        for(StepClass step : loadAdventure()) {
-            if(step.getId() == id) {
-                System.out.println("Story text: " + Colors.TRON.printWithColor(step.getStoryText()) + "\n");
-                System.out.println("1) " + Colors.CRIMSON.printWithColor(step.getOption1Text()) + "\n");
-                System.out.println("2) " + Colors.AMBER.printWithColor(step.getOption2Text()) + "\n");
+        // 1- finding the step
+        int nextId = id;
+
+        while(nextId != -1) {
+
+            StepClass step = findStep(nextId);
+            // Display the step info
+            System.out.println();
+            System.out.println(Colors.TRON.printWithColor(step.getStoryText()));
+            System.out.println();
+            System.out.println(Colors.CRIMSON.printWithColor("1) " + step.getOption1Text()));
+            System.out.println(Colors.AMBER.printWithColor("2) " + step.getOption2Text()));
+            System.out.print("\nMake a selection: ");
+            String userInput = scanner.nextLine().strip().toLowerCase();
+
+            switch(userInput) {
+                case "1" -> nextId = step.getOption1NextStepId();
+                case "2" -> nextId = step.getOption2NextStepId();
+
             }
         }
+    }
+
+    public static StepClass findStep(int id) {
+        for(int i = 0; i < loadAdventure().size(); i++) {
+            StepClass step = loadAdventure().get(i);
+            if(step.getId() == id) {
+                return step;
+            }
+        }
+        return null;
     }
 
     public static ArrayList<StepClass> loadAdventure() {
