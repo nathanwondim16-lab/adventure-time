@@ -3,24 +3,20 @@ package com.pluralsight;
 import java.awt.*;
 import java.io.*;
 import java.util.*;
-import java.util.Random;
 
 
-public class AdventureTime
-{
+public class AdventureTime {
     static HashMap<Integer, StepClass> adventureSteps;
     static Scanner scanner = new Scanner(System.in);
 
-    static void main()
-    {
+    static void main() {
         adventureSteps = loadAdventure();
 
         // start the application
         homeScreen();
     }
 
-    public static void homeScreen()
-    {
+    public static void homeScreen() {
         System.out.println("Welcome to Adventure Time!");
         System.out.println("--------------------------");
         System.out.println();
@@ -30,23 +26,19 @@ public class AdventureTime
 
         String choice = scanner.nextLine().toUpperCase().strip();
 
-        switch (choice)
-        {
-            case "P":
-                gameScreen(1);
-                break;
-            case "Q":
-                System.out.println("Goodbye!");
-                break;
-            default:
+        switch (choice) {
+            case "P" -> gameScreen(1);
+
+            case "Q" -> System.out.println("Goodbye!");
+            default -> {
                 System.out.println("Invalid selection. Please try again.");
                 homeScreen();
+            }
         }
 
     }
 
-    public static  void gameScreen(int id)
-    {
+    public static  void gameScreen(int id) {
         // stop the game if the id is -1 (end of the game)
         if(id == -1) return;
 
@@ -54,13 +46,12 @@ public class AdventureTime
 
         StepClass step = findStep(id);
 
-        if (step == null)
-        {
+        if (step == null) {
             System.out.println();
             System.out.println("An error occurred. The step was not found.");
         }
-        else
-        {
+
+        else {
             // 2 - display the step info
             System.out.println();
             System.out.println(Colors.TRON.printWithColor(step.getStoryText()));
@@ -70,31 +61,24 @@ public class AdventureTime
             System.out.print("Make a selection: ");
             String userInput = scanner.nextLine().strip().toLowerCase();
 
-            switch (userInput)
-            {
-                case "1":
-                    gameScreen(step.getOption1NextStepId());
-                    break;
-                case "2":
-                    gameScreen(step.getOption2NextStepId());
-                    break;
+            switch (userInput) {
+                case "1" -> gameScreen(step.getOption1NextStepId());
+
+                case "2" -> gameScreen(step.getOption2NextStepId());
+
             }
         }
 
-
     }
 
-    public static StepClass findStep(int id)
-    {
-        if (adventureSteps.containsKey(id))
-        {
+    public static StepClass findStep(int id) {
+        if (adventureSteps.containsKey(id)) {
             return adventureSteps.get(id);
         }
         return null;
     }
 
-    public static HashMap<Integer, StepClass> loadAdventure()
-    {
+    public static HashMap<Integer, StepClass> loadAdventure() {
         // create the container
         // ArrayLists grow as needed when you add new items
         HashMap<Integer, StepClass> steps = new HashMap<>();
@@ -104,9 +88,8 @@ public class AdventureTime
             FileReader fileReader = new FileReader("adventure1.csv");
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String line = bufferedReader.readLine();
-            line = bufferedReader.readLine();
-            while (line != null)
-            {
+            while ((line = bufferedReader.readLine()) != null) {
+
                 String[] columns = line.split("\\|");
 
                 int id = Integer.parseInt(columns[0]);
@@ -121,14 +104,9 @@ public class AdventureTime
 
                 // add the current step to the container (ArrayList)
                 steps.put(step.getId(),step);
-
-
-                // read the next line
-                line = bufferedReader.readLine();
             }
         }
-        catch(Exception ex)
-        {
+        catch(Exception ex) {
             System.err.println(ex);
         }
 
